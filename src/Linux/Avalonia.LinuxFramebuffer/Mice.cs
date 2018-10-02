@@ -30,6 +30,12 @@ namespace Avalonia.LinuxFramebuffer
             var mouseDevices = EvDevDevice.MouseDevices.Where(d => d.IsMouse).ToList();
             if (mouseDevices.Count == 0)
                 return;
+
+            foreach (var mouse in mouseDevices)
+            {
+                Console.Out.WriteLine($"Found ev dev mouse with name: {mouse.Name}");
+            }
+
             var are = new AutoResetEvent(false);
             while (true)
             {

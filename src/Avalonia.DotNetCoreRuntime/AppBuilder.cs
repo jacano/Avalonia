@@ -42,17 +42,12 @@ namespace Avalonia
             //that CLR doesn't try to load dependencies before referencing method is jitted
             if (os == OperatingSystemType.WinNT)
                 LoadWin32();
-            else if(os==OperatingSystemType.OSX)
-                LoadMonoMac();
-            else
-                LoadGtk3();
+
             this.UseSkia();
 
             return this;
         }
 
-        void LoadMonoMac() => this.UseMonoMac();
         void LoadWin32() => this.UseWin32();
-        void LoadGtk3() => this.UseGtk3();
     }
 }
