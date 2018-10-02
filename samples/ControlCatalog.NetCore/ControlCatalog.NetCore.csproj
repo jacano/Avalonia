@@ -12,8 +12,4 @@
     <ProjectReference Include="..\ControlCatalog\ControlCatalog.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Avalonia.Skia.Linux.Natives" Version="1.60.0.1" />
-  </ItemGroup>
-
 </Project>
