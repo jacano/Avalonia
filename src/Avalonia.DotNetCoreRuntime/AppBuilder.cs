@@ -35,19 +35,10 @@ namespace Avalonia
         /// <returns>An <see cref="AppBuilder"/> instance.</returns>
         public AppBuilder UsePlatformDetect()
         {
-            var os = RuntimePlatform.GetRuntimeInfo().OperatingSystem;
-            //We don't have the ability to load every assembly right now, so we are
-            //stuck with manual configuration  here
-            //Helpers are extracted to separate methods to take the advantage of the fact
-            //that CLR doesn't try to load dependencies before referencing method is jitted
-            if (os == OperatingSystemType.WinNT)
-                LoadWin32();
-
+            this.UseGtk3();
             this.UseSkia();
 
             return this;
         }
-
-        void LoadWin32() => this.UseWin32();
     }
 }
